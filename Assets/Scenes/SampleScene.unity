@@ -213,6 +213,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1386085127}
   - {fileID: 524514675}
@@ -343,7 +344,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-27432
+  m_Name: pb_Mesh23388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -530,6 +531,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 275951878}
   m_RootOrder: 1
@@ -652,6 +654,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -685,6 +688,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.89348197, z: 0}
   m_LocalScale: {x: 1, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1012615377}
   m_RootOrder: 0
@@ -841,6 +845,7 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -944,7 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Shape:
-    id: 0
+    rid: 0
   m_Size: {x: 20, y: 1, z: 20}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_PivotLocation: 1
@@ -954,8 +959,9 @@ MonoBehaviour:
     m_Center: {x: -7.8972473, y: 0.5226886, z: -5.161314}
     m_Extent: {x: 10, y: 0.5, z: 10}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
 --- !u!114 &915246967
 MonoBehaviour:
@@ -1208,6 +1214,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.4631004, y: -1.25, z: 7.5782394}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1304,6 +1311,7 @@ Transform:
   m_LocalRotation: {x: 0.44252342, y: -0, z: -0, w: 0.89675695}
   m_LocalPosition: {x: 2.5575607, y: 7.54, z: 0.21307206}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1341,7 +1349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d1ed173c7af394abffd219b468922b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  bullet: {fileID: 7546100957899185582, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+  speed: 60
+  bulletspeed: 400
 --- !u!54 &1012615373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1432,6 +1442,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.27, y: 2.682518, z: 4.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 654187750}
   m_Father: {fileID: 0}
@@ -1442,3 +1453,60 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
   m_PrefabInstance: {fileID: 284023360}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1915088268393827078
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7546100957899185582, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_Name
+      value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473146930342831438, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473146930342831438, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.5009794
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473146930342831438, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2961559
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473146930342831438, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.5937238
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473146930342831438, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473146930342831438, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473146930342831438, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473146930342831438, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473146930342831438, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473146930342831438, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473146930342831438, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 516b8b00729f35f0f9fab46c40848309, type: 3}

@@ -8,8 +8,11 @@ public class Joy : MonoBehaviour
     protected Joybutton joybutton;
     private Rigidbody rigidbody;
 
+    public GameObject bullet;
+
     protected bool jump;
     public float speed = 20f;
+    public float bulletspeed = 100f;
 
     void Start()
     {
@@ -26,7 +29,11 @@ public class Joy : MonoBehaviour
         if (!jump && (joybutton.Pressed || Input.GetKeyDown("space")))
         {
             jump = true;
-            rigidbody.AddForce(transform.forward * speed);
+            rigidbody.AddForce(transform.forward * -1 * speed);
+
+            GameObject instBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject; 
+            Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
+            instBulletRigidbody.AddForce(transform.forward * bulletspeed);
         }
 
         if (jump && !(joybutton.Pressed || Input.GetKeyDown("space")))
